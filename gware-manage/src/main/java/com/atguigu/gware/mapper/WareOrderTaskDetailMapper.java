@@ -1,12 +1,12 @@
 package com.atguigu.gware.mapper;
 
 import com.atguigu.gware.bean.WareOrderTaskDetail;
-import tk.mybatis.mapper.common.Mapper;
+import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 
 
 /**
  * @param
  * @return
  */
-public interface WareOrderTaskDetailMapper extends Mapper<WareOrderTaskDetail> {
+public interface WareOrderTaskDetailMapper extends BaseMapper<WareOrderTaskDetail> {
 }

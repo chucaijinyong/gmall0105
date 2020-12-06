@@ -2,7 +2,7 @@ package com.atguigu.gmall.manage.mapper;
 
 import com.atguigu.gmall.bean.PmsBaseCatalog1;
 import com.atguigu.gmall.bean.PmsBaseCatalog2;
-import tk.mybatis.mapper.common.Mapper;
+import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 
-public interface PmsBaseCatalog2Mapper  extends Mapper<PmsBaseCatalog2> {
+public interface PmsBaseCatalog2Mapper  extends BaseMapper<PmsBaseCatalog2> {
 }

@@ -1,7 +1,7 @@
 package com.atguigu.gware.mapper;
 
 import com.atguigu.gware.bean.WareSku;
-import tk.mybatis.mapper.common.Mapper;
+import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 
 import java.util.List;
 
@@ -9,7 +9,7 @@ import java.util.List;
  * @param
  * @return
  */
-public interface WareSkuMapper extends Mapper<WareSku> {
+public interface WareSkuMapper extends BaseMapper<WareSku> {
 
 
     public Integer selectStockBySkuid(String skuid);

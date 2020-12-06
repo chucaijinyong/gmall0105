@@ -117,6 +117,8 @@
                 <artifactId>mapper-spring-boot-starter</artifactId>
                 <version>${mapper-starter.version}</version>
             </dependency>
+            <!-- https://mvnrepository.com/artifact/com.baomidou/mybatis-plus-boot-starter -->
+
 
             <dependency>
                 <groupId>redis.clients</groupId>

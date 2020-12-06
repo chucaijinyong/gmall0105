@@ -1,7 +1,7 @@
 package com.atguigu.gmall.manage.mapper;
 
 import com.atguigu.gmall.bean.PmsSkuImage;
-import tk.mybatis.mapper.common.Mapper;
+import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 
-public interface PmsSkuImageMapper extends Mapper<PmsSkuImage> {
+public interface PmsSkuImageMapper extends BaseMapper<PmsSkuImage> {
 }

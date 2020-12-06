@@ -12,11 +12,10 @@ import com.atguigu.gmall.manage.mapper.PmsSkuInfoMapper;
 import com.atguigu.gmall.manage.mapper.PmsSkuSaleAttrValueMapper;
 import com.atguigu.gmall.service.SkuService;
 import com.atguigu.gmall.util.RedisUtil;
+import com.atguigu.gmall.util.Utils;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Configuration;
 import redis.clients.jedis.Jedis;
-import tk.mybatis.mapper.entity.Example;
 
 import java.math.BigDecimal;
 import java.util.List;
@@ -52,21 +51,21 @@ public class SkuServiceImpl implements SkuService {
         List<PmsSkuAttrValue> skuAttrValueList = pmsSkuInfo.getSkuAttrValueList();
         for (PmsSkuAttrValue pmsSkuAttrValue : skuAttrValueList) {
             pmsSkuAttrValue.setSkuId(skuId);
-            pmsSkuAttrValueMapper.insertSelective(pmsSkuAttrValue);
+            pmsSkuAttrValueMapper.insert(pmsSkuAttrValue);
         }
 
         // 插入销售属性关联
         List<PmsSkuSaleAttrValue> skuSaleAttrValueList = pmsSkuInfo.getSkuSaleAttrValueList();
         for (PmsSkuSaleAttrValue pmsSkuSaleAttrValue : skuSaleAttrValueList) {
             pmsSkuSaleAttrValue.setSkuId(skuId);
-            pmsSkuSaleAttrValueMapper.insertSelective(pmsSkuSaleAttrValue);
+            pmsSkuSaleAttrValueMapper.insert(pmsSkuSaleAttrValue);
         }
 
         // 插入图片信息
         List<PmsSkuImage> skuImageList = pmsSkuInfo.getSkuImageList();
         for (PmsSkuImage pmsSkuImage : skuImageList) {
             pmsSkuImage.setSkuId(skuId);
-            pmsSkuImageMapper.insertSelective(pmsSkuImage);
+            pmsSkuImageMapper.insert(pmsSkuImage);
         }
 
         // 发出商品的缓存同步消息
@@ -85,7 +84,7 @@ public class SkuServiceImpl implements SkuService {
         // sku的图片集合
         PmsSkuImage pmsSkuImage = new PmsSkuImage();
         pmsSkuImage.setSkuId(skuId);
-        List<PmsSkuImage> pmsSkuImages = pmsSkuImageMapper.select(pmsSkuImage);
+        List<PmsSkuImage> pmsSkuImages = pmsSkuImageMapper.selectByMap(Utils.transBean2Map(pmsSkuImage));
         skuInfo.setSkuImageList(pmsSkuImages);
         return skuInfo;
     }
@@ -161,7 +160,7 @@ public class SkuServiceImpl implements SkuService {
 
             PmsSkuAttrValue pmsSkuAttrValue = new PmsSkuAttrValue();
             pmsSkuAttrValue.setSkuId(skuId);
-            List<PmsSkuAttrValue> select = pmsSkuAttrValueMapper.select(pmsSkuAttrValue);
+            List<PmsSkuAttrValue> select = pmsSkuAttrValueMapper.selectByMap(Utils.transBean2Map(pmsSkuAttrValue));
 
             pmsSkuInfo.setSkuAttrValueList(select);
         }

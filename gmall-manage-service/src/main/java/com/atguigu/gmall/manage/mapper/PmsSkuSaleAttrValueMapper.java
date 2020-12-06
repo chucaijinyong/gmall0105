@@ -1,7 +1,7 @@
 package com.atguigu.gmall.manage.mapper;
 
 import com.atguigu.gmall.bean.PmsSkuSaleAttrValue;
-import tk.mybatis.mapper.common.Mapper;
+import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 
-public interface PmsSkuSaleAttrValueMapper extends Mapper<PmsSkuSaleAttrValue> {
+public interface PmsSkuSaleAttrValueMapper extends BaseMapper<PmsSkuSaleAttrValue> {
 }

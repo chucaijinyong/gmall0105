@@ -1,7 +1,7 @@
 package com.atguigu.gmall.manage.mapper;
 
 import com.atguigu.gmall.bean.PmsBaseSaleAttr;
-import tk.mybatis.mapper.common.Mapper;
+import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 
-public interface PmsBaseSaleAttrMapper extends Mapper<PmsBaseSaleAttr>{
+public interface PmsBaseSaleAttrMapper extends BaseMapper<PmsBaseSaleAttr>{
 }

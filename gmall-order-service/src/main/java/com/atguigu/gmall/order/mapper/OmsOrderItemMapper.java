@@ -1,7 +1,7 @@
 package com.atguigu.gmall.order.mapper;
 
 import com.atguigu.gmall.bean.OmsOrderItem;
-import tk.mybatis.mapper.common.Mapper;
+import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 
-public interface OmsOrderItemMapper extends Mapper<OmsOrderItem> {
+public interface OmsOrderItemMapper extends BaseMapper<OmsOrderItem> {
 }
